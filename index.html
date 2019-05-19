@@ -1,28 +1,67 @@
 <!doctype html>
 <html>
+
 <head lang='en'>
-<title>html 5 video</title>
-<meta charset='utf-8' />
+  <title>html 5 video</title>
+  <meta charset='utf-8' />
+  <style> 
+    body {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      background: black;
+    }
+
+    .player {
+      display: flex;
+      flex-direction: column;
+    }
+
+    video {
+      border:yellow solid 5px;
+      margin: 0;
+    }
+
+    .controls {
+      display: flex;
+      background: yellow;
+      margin: 0;
+      border: yellow;
+    }
+
+    .control {
+      background: black;
+      border: 0px;
+    }
+
+    .control:hover {
+      box-shadow: rgba(0,0,0,0.5) 5px 5px;
+    }
+
+
+
+  </style>
 </head>
 
 <body>
-<div class='player'>
-<video src='video.mp4' height='500' width='900'autoplay></video>
-<div class='controls'>
-  <button class='play'>&gt;</button>
-  
-  <div class='progress-bar'>
-    <div class='progress-fill'></div>
+  <div class='player'>
+    <video src='video.mp4' height='500' width='900' autoplay></video>
+    <div class='controls'>
+      <button class='play control'>&gt;</button>
+
+      <div class='progress-bar control'>
+        <div class='progress-fill control'></div>
+      </div>
+
+      <input type='range' id='volume' class="control range" />
+      <input type='range' id='speed' class="control range"/>
+
+      <button class='seek control' id='back'>10s&lt;&lt;</button>
+      <button class='seek control' id='forward'>&gt;&gt;10s</button>
+    </div>
+
+
   </div>
-
-  <input type='range' id='volume' width/>
-  <input type='range' id='speed' />
-  
-  <button class='seek' id='back'></button>
-  <button class='seek' id='forward'></button>
-</div>
-
-
-</div>
 </body>
+
 </html>
